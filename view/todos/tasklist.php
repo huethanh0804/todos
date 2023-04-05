@@ -39,18 +39,21 @@
                         <?php
                         foreach ($list as $item) {
                         ?>
-                            <tr>
-                                <td><?= $item->id ?></td>
-                                <td><?= $item->user_id ?></td>
-                                <td><?= $item->title ?></td>
-                                <td><?= $item->description ?></td>
-                                <td><?= $item->deadline ?></td>
-                                <td> <?= $item->status ?></td>
-                                <td>
-                                    <a name="" id="" class="btn btn-primary btn-sm" href="<?= href('todos', 'edit', ['id' => $item->id]) ?>" role="button">Edit</a>
-                                    <a name="" id="" class="btn btn-danger btn-sm" href="<?= href('todos', 'delete', ['id' => $item->id]) ?>" onclick="return confirm('Bạn có muốn xóa dòng này không?')" role="button">Delete</a>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td><?= $item->id ?></td>
+                            <td><?= $item->name ?></td>
+                            <td><?= $item->title ?></td>
+                            <td><?= $item->description ?></td>
+                            <td><?= date("Y-m-d", strtotime($item->deadline)) ?></td>
+                            <td> <?= $item->status ?></td>
+                            <td>
+                                <a name="" id="" class="btn btn-primary btn-sm"
+                                    href="<?= href('todos', 'edit', ['id' => $item->id]) ?>" role="button">Edit</a>
+                                <a name="" id="" class="btn btn-danger btn-sm"
+                                    href="<?= href('todos', 'delete', ['id' => $item->id]) ?>"
+                                    onclick="return confirm('Bạn có muốn xóa dòng này không?')" role="button">Delete</a>
+                            </td>
+                        </tr>
                         <?php
                         }
                         ?>

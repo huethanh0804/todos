@@ -37,17 +37,17 @@
                 </div>
                 <div class="form-group">
                     <label for="">Deadline</label>
-                    <input type="text" class="form-control" name="deadline" id="" aria-describedby="helpId" placeholder="" value="">
+                    <input type="date" class="form-control" name="deadline" id="" aria-describedby="helpId" placeholder="" value="">
                     <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Status</label>
-                    <select class="form-control" id="exampleFormControlSelect1" name="status">
+                    <select class="form-control" id="exampleFormControlSelect1" name="status_id">
                         <option value="" selected>Select a option</option>
                         <?php
                         foreach ($todos as $status) {
                         ?>
-                            <option value="<?= $status->id ?>"><?= $status->name ?? ''  ?></option>
+                            <option value="<?= $status->id ?>"><?= $status->status ?? ''  ?></option>
                         <?php
                         }
                         ?>

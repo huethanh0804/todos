@@ -19,7 +19,7 @@
                         <?php
                         foreach ($users as $user) {
                         ?>
-                        <option value="<?= $user->id ?>"><?= $user->name ?? ''  ?></option>
+                            <option value="<?= $user->id ?>"><?= $user->name ?? ''  ?></option>
                         <?php
                         }
                         ?>
@@ -27,28 +27,25 @@
                 </div>
                 <div class="form-group">
                     <label for="">Title</label>
-                    <input type="text" class="form-control" name="title" id="" aria-describedby="helpId" placeholder=""
-                        value="<?= $todo->title ?>">
+                    <input type="text" class="form-control" name="title" id="" aria-describedby="helpId" placeholder="" value="<?= $todo->title ?>">
                     <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
                 </div>
                 <div class="form-group">
                     <label for="">Description</label>
-                    <textarea class="form-control" name="description" id=""
-                        rows="3"><?= $todo->description ?></textarea>
+                    <textarea class="form-control" name="description" id="" rows="3"><?= $todo->description ?></textarea>
                 </div>
                 <div class="form-group">
                     <label for="">Deadline</label>
-                    <input type="text" class="form-control" name="deadline" id="" aria-describedby="helpId"
-                        placeholder="" value="<?= $todo->deadline ?>">
+                    <input type="date" class="form-control" name="deadline" id="" aria-describedby="helpId" placeholder="" value="<?= date("Y-m-d", strtotime($todo->deadline)) ?>">
                     <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Status</label>
-                    <select class="form-control" id="exampleFormControlSelect1" name="status">
+                    <select class="form-control" id="exampleFormControlSelect1" name="status_id">
                         <?php
                         foreach ($todos as $status) {
                         ?>
-                        <option value="<?= $status->id ?>"><?= $status->name ?? ''  ?></option>
+                            <option value="<?= $status->id ?>"><?= $status->status ?? ''  ?></option>
                         <?php
                         }
                         ?>
